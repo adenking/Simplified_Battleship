@@ -27,6 +27,8 @@ guess_col = int(input("Guess Col: "))
 if guess_row == ship_row and guess_col == ship_col:
     print("Congratulations! You sank my battleship!")
 else:
+    if guess_row != range(5) or guess_col != range(5): # TODO add exception handling
+        print("Oops, that's not even in the ocean.")
     print("You missed my battleship!")
     board[int(guess_row)][int(guess_col)] = "X"
     print_board(board)
