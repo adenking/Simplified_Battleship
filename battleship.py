@@ -33,7 +33,8 @@ for turn in range(4):
             print("Oops, that's not even in the ocean.")
         elif board[guess_row][guess_col] == "X":
             print("You guessed that one already.")
-        print("You missed my battleship!")
-        board[int(guess_col)][int(guess_row)] = "X"
-        print('Turn: {0}'.format(turn+1))
+        else:
+            print("You missed my battleship!")
+            board[int(guess_col)][int(guess_row)] = "X"
+        print('Turn: {0}'.format(turn + 1))
         print_board(board)
