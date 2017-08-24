@@ -28,8 +28,11 @@ for turn in range(4):
 
     if guess_row == ship_row and guess_col == ship_col:
         print("Congratulations! You sank my battleship!")
+        board[int(guess_col)][int(guess_row)] = "V"
+        print_board(board)
+        break
     else:
-        if guess_row >= len(board) or guess_col >= len(board[0]): 
+        if guess_row >= len(board) or guess_col >= len(board[0]):
             print("Oops, that's not even in the ocean.")
         elif board[guess_row][guess_col] == "X":
             print("You guessed that one already.")
@@ -38,3 +41,9 @@ for turn in range(4):
             board[int(guess_col)][int(guess_row)] = "X"
         print('Turn: {0}'.format(turn + 1))
         print_board(board)
+        if turn == 3:
+            print("Game Over")
+            board[int(ship_col)][int(ship_row)] = "S"
+            print_board(board)
+            break
+

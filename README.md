@@ -1,2 +1,2 @@
 # Simplified_Battleship
-a singleplayer version of Battleship
+A singleplayer version of Battleship.
